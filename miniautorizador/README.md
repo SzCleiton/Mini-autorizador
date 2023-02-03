@@ -132,3 +132,13 @@ Desafios (não obrigatórios):
  * é possível construir a solução inteira sem utilizar nenhum if. Só não pode usar *break* e *continue*! 
  * como garantir que 2 transações disparadas ao mesmo tempo não causem problemas relacionados à concorrência?
 Exemplo: dado que um cartão possua R$10.00 de saldo. Se fizermos 2 transações de R$10.00 ao mesmo tempo, em instâncias diferentes da aplicação, como o sistema deverá se comportar?
+
+Resp:
+
+Uma das formas de garantir que duas transações simultâneas não causem problemas relacionados à concorrência é utilizando a técnica de lock de banco de dados. Isso significa que, durante a execução da transação, o banco de dados "trava" a linha/registro relevante para garantir que outra transação não possa alterá-lo simultaneamente.
+
+No exemplo acima , poderíamos utilizar um lock em nível de linha para bloquear o saldo do cartão durante a execução da transação. Desta forma, apenas uma das transações seria permitida a executar a operação, enquanto a outra esperaria o lock ser liberado.
+
+Outra opção é utilizar uma estratégia de pessimista ou otimista, onde a primeira iria seguir a mesma lógica do lock, enquanto a segunda iria verificar se houve mudanças no saldo do cartão após a sua execução e, caso sim, refazê-la.
+
+Ambas as estratégias são comuns e eficazes, mas a escolha entre uma ou outra dependerá de fatores como a carga de trabalho da aplicação, a necessidade de escalabilidade e o impacto na performance do banco de dados.
