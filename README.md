@@ -33,7 +33,7 @@ Avaliação técnica de uma API de Mini Autorizador, desenvolvido em Java com Sp
 ## Instalação
 
 ```
-$ git clone https://github.com/danilomeneghel/prova-vr.git
+$ git clone https://github.com/SzCleiton/Vr-Teste.git
 
 $ cd prova-vr
 ```
