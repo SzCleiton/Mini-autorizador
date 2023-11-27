@@ -1,7 +1,3 @@
-# Prova VR
-
-Avaliação técnica de uma API de Mini Autorizador, desenvolvido em Java com Spring-Boot.
-
 ## Características
 
 - CRUD
